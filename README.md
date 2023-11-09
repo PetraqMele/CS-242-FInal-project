@@ -1,6 +1,6 @@
-# CS-242-FInal-project
+# CS-242-FInal-project(not apart of the code)
 
-Create Final project
+Create Final project (not apart of the code)
 import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
