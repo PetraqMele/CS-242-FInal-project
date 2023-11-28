@@ -4,6 +4,23 @@ Create Final project (not apart of the code)
 import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
+
+
+	public void disInitial() {
+		System.out.print("~--------------------------------------------~");
+		System.out.print("|---Welcome to the space activity database---|");
+		System.out.print("~--------------------------------------------~");
+	}
+	public void disUser() {
+		System.out.print("~-------Choose options below-----~");
+		System.out.print("|[1]-----Space questions---------|");
+		System.out.print("|[2]-----Rocket ship simulation--|");
+		System.out.print("|[3]-----weight in other planets-|");
+		System.out.print("|[4]-----------Exit--------------|");
+		System.out.print("~--------------------------------~");
+	}
+
+
  
 	public static int[] distance(int a, int oriSpace[], int v) {
 		int b;
@@ -45,5 +62,10 @@ return tempArr;
 	//printing int method
 	System.out.print(oriSpace);
 	System.out.println("new array\n" + Arrays.toString(oriSpace));
+
+ 
+	Menu menu = new Menu();
+	menu.printdisIntial();
+	menu.printdisUser();
 	}
 }
