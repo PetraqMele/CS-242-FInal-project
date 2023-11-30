@@ -15,7 +15,7 @@ public class main {
         Planet Saturn = new Planet();
         Planet Uranus = new Planet();
         Planet Neptune = new Planet();
-        
+        System.out.println(Earth.getGravity());
         
         
 	}
