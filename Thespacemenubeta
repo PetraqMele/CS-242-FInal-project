@@ -81,40 +81,80 @@ break;
     }
 }
 private void pickSpaceweight() {
-    switch(num) {
+switch(num) {
         case 0:
         exit = true;
         case 1:
         System.out.println("weight in Mercury calculations");
-
-
+       Scanner Spaceweight = new Scanner(System.in);
+        System.out.println("Type your weight");
+        double Spaceweight = nextDouble(); 
+       double spaceResult1 = Spaceweight * 0.38; 
+System.out.println(spaceResult1 + "lbs"); 
         break:
+      
         case 2:
         System.out.println("weight in Venus eight calculations");
-
+        Scanner Spaceweight2 = new Scanner(System.in);
+        System.out.println("Type your weight");
+        double Spaceweight2 = nextDouble(); 
+        double spaceResult2 = Spaceweight2 * 0.91;
+        System.out.println(spaceResult2 + "lbs"); 
         break:
+       
         case 3:
         System.out.println("weight in Earth weight calculations");
+        Scanner Spaceweight3 = new Scanner(System.in);
+        System.out.println("Type your weight");
+        double Spaceweight3 = nextDouble(); 
+        double spaceResult3 = Spaceweight3;
+        System.out.println(spaceResult3 + "lbs");
+        
+
         break:
         case 4:
         System.out.println("weight in Mars weight calculations");
-
+        Scanner Spaceweight4 = new Scanner(System.in);
+        System.out.println("Type your weight");
+        double Spaceweight4 = nextDouble();
+        double spaceResult4 = Spaceweight4 * 0.38;
+        System.out.println(spaceResult4 + "lbs");
         break:
+
         case 5:
         System.out.println("weight in Jupiter weight calculations");
-
+        Scanner Spaceweight5 = new Scanner(System.in);
+        System.out.println("Type your weight");
+        double Spaceweight5 = nextDouble(); 
+        double spaceResult5 = Spaceweight5 * 2.34;
+        System.out.println(spaceResult5 + "lbs");
         break:
+
         case 6:
         System.out.println("weight in Saturn weight calculations");
-
+        Scanner Spaceweight6 = new Scanner(System.in);
+        double Spaceweight6 = nextDouble(); 
+        double spaceResult6 = Spaceweight6 * 1.06;
+        System.out.println("Type your weight");
+        System.out.println(spaceResult4 + "lbs");
         break:
+
         case 7:
         System.out.println("weight in Uranus weight calculations");
-
+        Scanner Spaceweight7 = new Scanner(System.in);
+        System.out.println("Type your weight");
+        double Spaceweight7 = nextDouble(); 
+        double spaceResult7 = Spaceweight7 * 0.92;
+System.out.println(spaceResult7 + "lbs");
         break:
+
         case 8:
         System.out.println("weight in Neptune weight calculations");
-
+        Scanner Spaceweight8 = new Scanner(System.in);
+        double Spaceweight8 = nextDouble(); 
+        System.out.println("Type your weight");
+        double spaceResult8 = Spaceweight8 * 1.19;
+        System.out.println(spaceResult8 + "lbs");
         break:
        
         break;
