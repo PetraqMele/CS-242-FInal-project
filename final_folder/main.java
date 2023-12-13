@@ -10,6 +10,34 @@ public class main {
 		}
 		System.out.println();
     }
+
+    public static void initialMenu() {
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("   Welcome to Space database ");
+        System.out.println("            menu             ");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }
+    public static void printMenu() {
+        System.out.println("\n~~~~Choose options below~~~");
+        System.out.println("[1]~~~~Planets~~~~~~~~~~~~~~~");
+        System.out.println("[2]~~~~~Space quiz~~~~~~~~~~~");
+        System.out.println("[3]~~~~~rocket ship game~~~~~");
+        System.out.println("[4]~~~~~Exit~~~~~~~~~~~~~~~~~");
+    
+    }
+
+    public static void printSpaceOptionMenu(){
+        System.out.println("\n~~~~Welcome to the data base~~~");
+    }
+
+    public static void printSpaceQuizOptions(){
+        
+    }
+
+    public static void printRocketShipGameOptions(){
+
+    }
+
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 
@@ -47,6 +75,10 @@ public class main {
         solarSystem.append(n9);
         
         printList(solarSystem);
+        initialMenu();
+        printMenu();
+
+        while()
 	}
 
 }
