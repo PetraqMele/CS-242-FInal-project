@@ -1,5 +1,6 @@
 package final_folder;
 import java.util.Scanner;
+
 public class main {
 
     public static void printList(SortedList list){
@@ -28,14 +29,21 @@ public class main {
 
     public static void printSpaceOptionMenu(){
         System.out.println("\n~~~~Welcome to the data base~~~");
+        System.out.println("[1]Planets");
+        System.out.println("[2]Random Fact");
+        System.out.println("[3]Add Planets");
+        System.out.println("[4]Remove Planets");
     }
 
     public static void printSpaceQuizOptions(){
-        
+        System.out.println("\n~~~~Quiz Yourself!~~~");
+        System.out.println("[1]5 Question quiz");
+        System.out.println("[2] 10 Question quiz");
     }
 
-    public static void printRocketShipGameOptions(){
 
+    public static void printRocketShipGameOptions(){
+        System.out.print("Welcome to the Rocket Ship!");
     }
 
 	public static void main(String[] args) {
@@ -43,14 +51,32 @@ public class main {
 
         //Creating all the planets
         Planet Sun = new Planet();
+        Sun.setDistanceFromSun(0);
+        Sun.setRadius(0);
         Planet Mercury = new Planet();
+        Mercury.setDistanceFromSun(58000000);
+        Mercury.setRadius(2440);
         Planet Venus = new Planet();
+        Venus.setDistanceFromSun(108000000);
+        Venus.setRadius(6051);
         Planet Earth = new Planet();
+        Earth.setDistanceFromSun(150000000);
+        Earth.setRadius(6371);
         Planet Mars = new Planet();
+        Mars.setDistanceFromSun(228000000);
+        Mars.setRadius(3390);
         Planet Jupiter = new Planet();
+        Jupiter.setDistanceFromSun(778000000);
+        Jupiter.setRadius(69911);
         Planet Saturn = new Planet();
+        Saturn.setDistanceFromSun(1400000000);
+        Saturn.setRadius(58232);
         Planet Uranus = new Planet();
+        Uranus.setDistanceFromSun(2900000000L);
+        Uranus.setRadius(25362);
         Planet Neptune = new Planet();
+        Neptune.setDistanceFromSun(4500000000L);
+        Neptune.setRadius(24622);
         System.out.println(Earth.getGravity());
         
         Node n1 = new Node(Sun);
@@ -77,8 +103,28 @@ public class main {
         printList(solarSystem);
         initialMenu();
         printMenu();
+        int userChoice = -1;
+        while(userChoice != 4){
+            if (userChoice == 1){
+                printSpaceOptionMenu();
+                
 
-        while()
+                    
+                
+            }
+
+            else if (userChoice == 2){
+                printSpaceQuizOptions();
+            }
+
+            else if (userChoice == 3){
+                printRocketShipGameOptions();
+            }
+        }
+
+        if (userChoice == 4){
+            System.out.println("Application closed Successfully!");
+        }
 	}
 
 }

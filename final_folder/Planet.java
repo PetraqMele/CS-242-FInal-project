@@ -5,6 +5,7 @@ public class Planet {
     private double size;//This will be in Kilometers
     private double mass;//This will be in Kilograms
     private double radius = size/2;
+    private long distanceFromSun;
 
     //planet constructor
     public Planet(){
@@ -13,13 +14,13 @@ public class Planet {
     }
 
     //Setter method for size
-    public void setSize(double size){
-        this.size = size;
+    public void setRadius(double radius){
+        this.radius = radius;
     }
 
     //getter method for size
-    public double getSize(){
-        return size;
+    public double getRadius(){
+        return radius;
     }
 
     //getting the Gravity of a planet
@@ -27,4 +28,14 @@ public class Planet {
         double gravity = (6.67430 * Math.pow(10,-11))*(mass/Math.pow(radius,2));//formula for gravity G(Mass/Radius^2)
         return gravity;
     }
+
+    public double getDistanceFromSun(){
+        return distanceFromSun;
+    }
+
+    public void setDistanceFromSun(long distance){
+        distanceFromSun = distance;
+    }
+
+    
 }
