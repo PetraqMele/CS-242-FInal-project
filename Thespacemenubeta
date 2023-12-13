@@ -1,16 +1,20 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.awt.Menu;
+import java.util.Map;
+import java.util.ArrayList;
 
 public class Thespacemenubeta {
-boolean exit;
-    public void initialMenu() {
-    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    System.out.println("   Welcome to Space database ");
-    System.out.println("            menu             ");
-    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+  
+    boolean exit = false; 
+    private void initialMenu() {
+    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    System.out.println("   Welcome to Space database");
+    System.out.println("            menu            ");
+    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 }
-public void printMenu() {
-    System.out.println("\n~~~~Choose options below~~~");
+private void printMenu() {
+    System.out.println("\n~~~~Choose options below~~~~~");
     System.out.println("[1]~~~~weight equation~~~~~~~");
     System.out.println("[2]~~~~~Space quiz~~~~~~~~~~~");
     System.out.println("[3]~~~~~rocket ship game~~~~~");
@@ -18,21 +22,20 @@ public void printMenu() {
 
 }
 public void runMenu() {
-    printMenu();
-    While(!exit){
+    initialMenu();
+    while(!exit) { //inside must have !exit
         printMenu();
         int choice = getUserIn();
-
-        
+        performAction(choice);
     }
 }
-private void getUserIn(){
+private int getUserIn(){
     int choice = -1;
-    Scanner Kb = new Scanner(System.in);
-    while(choice < 0 || choice > 3) {
+    Scanner OS = new Scanner(System.in);
+    while(choice < 0 || choice > 2) {
         try {
-           System.out.println("\nChoose a option below:");
-            choice = Integer.parseInt(kb.nextLine());
+           System.out.print("\nChoose a option below:");
+            choice = Integer.parseInt(OS.nextLine());
         }
            catch(NumberFormatException e) { 
             System.out.println("Invalid option, choose another option");
@@ -41,121 +44,82 @@ private void getUserIn(){
     }
     return choice; 
 }
-private void performAct(){ 
+private void performAction(int choice){ 
     switch(choice) {
         case 0:
         exit = true;
         System.out.println("thank you for using the server");
         break;
         case 1:
-        pickPlanetQuiz();
-        break;
-        case 2:
-pickSpaceweight();
-break;
-        case 3:
         pickRocketGame();
         break;
-        default:
-        System.out.println("error has occured");
-    }
-}
-private void pickPlanetQuiz() {
-    int num = (int) (Math.random() * 4); 
-    switch(num) {
-        case 0:
-        exit = true;
-        System.out.println("thank you for using the server");
-        break;
-        case 1:
-        System.out.println("Planet Quiz");
-        break;
         case 2:
-        System.out.println("Planet weight calculations");
-break;
-        case 3:
-        System.out.println("Rocket ship game");
+        pickSpaceweight();
         break;
         default:
         System.out.println("error has occured");
     }
 }
+
 private void pickSpaceweight() {
-switch(num) {
+  Scanner weight = new Scanner(System.in);
+  float spaceResult; 
+  System.out.println("Type your weight before selecting the planet");
+  int Spaceweight = weight.nextInt(); 
+    int num = 8;
+  
+    switch(num) {
+     
         case 0:
         exit = true;
         case 1:
         System.out.println("weight in Mercury calculations");
-       Scanner Spaceweight = new Scanner(System.in);
-        System.out.println("Type your weight");
-        double Spaceweight = nextDouble(); 
-       double spaceResult1 = Spaceweight * 0.38; 
-System.out.println(spaceResult1 + "lbs"); 
-        break:
+        
+       spaceResult = (Spaceweight * 38) / 100; 
+System.out.println(spaceResult + "lbs"); 
+        break;
       
         case 2:
         System.out.println("weight in Venus eight calculations");
-        Scanner Spaceweight2 = new Scanner(System.in);
-        System.out.println("Type your weight");
-        double Spaceweight2 = nextDouble(); 
-        double spaceResult2 = Spaceweight2 * 0.91;
-        System.out.println(spaceResult2 + "lbs"); 
-        break:
+        spaceResult = (Spaceweight * 91) / 100;
+        System.out.println(spaceResult + "lbs"); 
+        break;
        
         case 3:
         System.out.println("weight in Earth weight calculations");
-        Scanner Spaceweight3 = new Scanner(System.in);
-        System.out.println("Type your weight");
-        double Spaceweight3 = nextDouble(); 
-        double spaceResult3 = Spaceweight3;
-        System.out.println(spaceResult3 + "lbs");
-        
+        spaceResult = Spaceweight;
+        System.out.println(spaceResult + "lbs");
+        break;
 
-        break:
         case 4:
         System.out.println("weight in Mars weight calculations");
-        Scanner Spaceweight4 = new Scanner(System.in);
-        System.out.println("Type your weight");
-        double Spaceweight4 = nextDouble();
-        double spaceResult4 = Spaceweight4 * 0.38;
-        System.out.println(spaceResult4 + "lbs");
-        break:
+        spaceResult = (Spaceweight * 38) / 100;
+        System.out.println(spaceResult + "lbs");
+        break;
 
         case 5:
         System.out.println("weight in Jupiter weight calculations");
-        Scanner Spaceweight5 = new Scanner(System.in);
-        System.out.println("Type your weight");
-        double Spaceweight5 = nextDouble(); 
-        double spaceResult5 = Spaceweight5 * 2.34;
-        System.out.println(spaceResult5 + "lbs");
-        break:
+        spaceResult = (Spaceweight * 234) / 100;
+        System.out.println(spaceResult + "lbs");
+        break;
 
         case 6:
         System.out.println("weight in Saturn weight calculations");
-        Scanner Spaceweight6 = new Scanner(System.in);
-        double Spaceweight6 = nextDouble(); 
-        double spaceResult6 = Spaceweight6 * 1.06;
-        System.out.println("Type your weight");
-        System.out.println(spaceResult4 + "lbs");
-        break:
+        spaceResult = (Spaceweight * 106) / 100;
+        System.out.println(spaceResult + "lbs");
+        break;
 
         case 7:
         System.out.println("weight in Uranus weight calculations");
-        Scanner Spaceweight7 = new Scanner(System.in);
-        System.out.println("Type your weight");
-        double Spaceweight7 = nextDouble(); 
-        double spaceResult7 = Spaceweight7 * 0.92;
-System.out.println(spaceResult7 + "lbs");
-        break:
+        spaceResult = (Spaceweight * 92) / 100;
+System.out.println(spaceResult + "lbs");
+        break;
 
         case 8:
         System.out.println("weight in Neptune weight calculations");
-        Scanner Spaceweight8 = new Scanner(System.in);
-        double Spaceweight8 = nextDouble(); 
-        System.out.println("Type your weight");
-        double spaceResult8 = Spaceweight8 * 1.19;
-        System.out.println(spaceResult8 + "lbs");
-        break:
+        spaceResult = (Spaceweight * 119) / 100;
+        System.out.println(spaceResult + "lbs");
+        break;
        
         break;
         default:
@@ -163,29 +127,25 @@ System.out.println(spaceResult7 + "lbs");
     }
 }
 private void pickRocketGame() {
+  int num = (int) (Math.random() * 4);
     switch(num) {
         case 0:
         exit = true;
-        System.out.println("thank you for using the server");
+        System.out.println("thank you for using the program");
         break;
         case 1:
         System.out.println("Planet Quiz");
         break;
         case 2:
         System.out.println("Planet weight calculations");
-break;
-        case 3:
-        System.out.println("Rocket ship game");
         break;
         default:
         System.out.println("error has occured");
     }
 }
 public static void main(String[] args) {
-    Menu menu = new Menu();
-    menu.initialMenu();
-    menu.printMenu();
+   Menu menu = new Menu(); 
+   menu.runMenu(); // it is saying runMenu is undeclared?? im confused 
 
 }
 
-}
