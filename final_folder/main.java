@@ -42,7 +42,7 @@ public class main {
                 System.out.println("\n True or false: ");
                 System.out.println("\n (a) - true"); 
                 System.out.println("\n (b) - false"); 
-                if (resultA != "a") {
+                if (resultA == "a") {
                     System.out.println("\n -false");}
                     else {
                         System.out.println("\n -true"); 
@@ -50,7 +50,7 @@ public class main {
             break; 
             
              case 1:
-            System.out.println("Question 1: Is Mercury the hottest planet in our Solar System");
+            System.out.println("Question 2: Is Mercury the hottest planet in our Solar System");
                 System.out.println("\n True or false: ");
                 System.out.println("\n (a) - false"); 
                 System.out.println("\n (b) - true"); 
@@ -62,15 +62,38 @@ public class main {
                  break; 
             
              case 2:
-            
+            System.out.println("Question 3: Is Venus the hottest planet in the Solar System ");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - true"); 
+                System.out.println("\n (b) - false"); 
+                if (resultA == "a") {
+                    System.out.println("\n - false");}
+                    else {
+                        System.out.println("\n - true"); 
                  break; 
             
              case 3:
-            
+            System.out.println("Question 4: Does the Moon affect the Earth's tide");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - false"); 
+                System.out.println("\n (b) - true"); 
+                if (resultA == "a") {
+                    System.out.println("\n - true");}
+                    else {
+                        System.out.println("\n - false"); 
+                    }
                  break; 
             
              case 4:
-            
+            System.out.println("Question 5: How many sattelites does Mars have ");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - 3"); 
+                System.out.println("\n (b) - 8"); 
+                if (resultA == "b") {
+                    System.out.println("\n - true");}
+                    else {
+                        System.out.println("\n - false"); 
+                    }
                  break; 
             
              case 5:
