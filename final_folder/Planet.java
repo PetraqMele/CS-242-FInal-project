@@ -6,7 +6,7 @@ public class Planet {
     private double mass;//This will be in Kilograms
     private double radius = size/2;
     private long distanceFromSun;
-
+    private String name;
     //planet constructor
     public Planet(){
         size = 6378.1;
@@ -37,5 +37,13 @@ public class Planet {
         distanceFromSun = distance;
     }
 
+    public void setName(String planetName){
+        name = planetName;
+    }
+
+    public String toString(){
+        return name + "";
+    }
+    
     
 }

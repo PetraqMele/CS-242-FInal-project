@@ -7,14 +7,14 @@ public class Node {
     public Node previous;
 
         public Node(Planet planetData) {//base planet node
-           planetData = this.planetData;
+           this.planetData = planetData;
            next = null;
            previous = null;
         
      }
 
         public Node(Planet planetData, Node nextNode, Node previousNode){//planet node with previous and next link
-            planetData = this.planetData;
+            this.planetData = planetData;
             next = nextNode;
             previous = previousNode; 
         }
@@ -42,4 +42,5 @@ public class Node {
         public void setPrevious(Node planet){
             previous = planet;
         }
+        
 }

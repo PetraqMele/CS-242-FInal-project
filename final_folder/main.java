@@ -2,15 +2,8 @@ package final_folder;
 import java.util.Scanner;
 
 public class main {
-
-    public static void printList(SortedList list){
-        Node node = list.head;
-		while (null != node) {
-			System.out.print(node.getPlanet() + " ");
-			node = node.getNext();
-		}
-		System.out.println();
-    }
+    
+    
 
     public static void initialMenu() {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -53,30 +46,39 @@ public class main {
         Planet Sun = new Planet();
         Sun.setDistanceFromSun(0);
         Sun.setRadius(0);
+        Sun.setName("Sun");
         Planet Mercury = new Planet();
         Mercury.setDistanceFromSun(58000000);
         Mercury.setRadius(2440);
+        Mercury.setName("Mercury");
         Planet Venus = new Planet();
         Venus.setDistanceFromSun(108000000);
         Venus.setRadius(6051);
+        Venus.setName("venus");
         Planet Earth = new Planet();
         Earth.setDistanceFromSun(150000000);
         Earth.setRadius(6371);
+        Earth.setName("Earth");
         Planet Mars = new Planet();
         Mars.setDistanceFromSun(228000000);
         Mars.setRadius(3390);
+        Mars.setName("Mars");
         Planet Jupiter = new Planet();
         Jupiter.setDistanceFromSun(778000000);
         Jupiter.setRadius(69911);
+        Jupiter.setName("Jupiter");
         Planet Saturn = new Planet();
         Saturn.setDistanceFromSun(1400000000);
         Saturn.setRadius(58232);
+        Saturn.setName("Saturn");
         Planet Uranus = new Planet();
         Uranus.setDistanceFromSun(2900000000L);
         Uranus.setRadius(25362);
+        Uranus.setName("Uranus");
         Planet Neptune = new Planet();
         Neptune.setDistanceFromSun(4500000000L);
         Neptune.setRadius(24622);
+        Neptune.setName("Neptune");
         System.out.println(Earth.getGravity());
         
         Node n1 = new Node(Sun);
@@ -99,15 +101,19 @@ public class main {
         solarSystem.append(n7);
         solarSystem.append(n8);
         solarSystem.append(n9);
+        System.out.println(Earth.getDistanceFromSun());
         
-        printList(solarSystem);
+        solarSystem.printList();
         initialMenu();
         printMenu();
         int userChoice = -1;
         while(userChoice != 4){
             if (userChoice == 1){
                 printSpaceOptionMenu();
-                
+                int secondUserChoice = scan.nextInt();
+                    if (secondUserChoice == 1){
+                        System.out.println(1);
+                    }
 
                     
                 

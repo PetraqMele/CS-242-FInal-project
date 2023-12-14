@@ -20,4 +20,13 @@ public class SortedList {
            tail = newNode;
         }
      }
-}
+
+     public void printList() {
+      Node node = head;
+      while (node != null) {
+         System.out.print(node.getPlanet() + " ");
+         node = node.next;
+      }
+      System.out.println();
+   }
+   }
