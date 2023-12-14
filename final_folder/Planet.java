@@ -2,15 +2,32 @@ package final_folder;
 import java.lang.Math;
 public class Planet {
     //planet attributes
-    private double size;//This will be in Kilometers
+    private double radius;
     private double mass;//This will be in Kilograms
-    private double radius = size/2;
     private long distanceFromSun;
     private String name;
+    private String color;
+    private double temperature;
+    private boolean containsWater;
     //planet constructor
     public Planet(){
-        size = 6378.1;
-        mass = 5.97219 * Math.pow(10,24);
+        radius = -1;
+        mass = -1;
+        distanceFromSun = -1;
+        name = "";
+        color = "";
+        temperature = -1;
+        containsWater = false;
+
+    }
+
+    public Planet(double radius, double mass, long distanceFromSun, String name, String color,  double temperature,  boolean containsWater){
+        this.radius = radius;
+        this.distanceFromSun = distanceFromSun;
+        this.name = name;
+        this.color = color;
+        this.temperature = temperature;
+        this.containsWater = containsWater;
     }
 
     //Setter method for size
@@ -44,6 +61,37 @@ public class Planet {
     public String toString(){
         return name + "";
     }
+
+    public void setColor(String color){
+        this.color = color;
+    }
+
+    public String getColor(){
+        return color;
+    }
+
+    public void setTemperature(double temperature){
+        this.temperature = temperature;
+    }
+
+    public double getTemperature(){
+        return temperature;
+    }
+
+    public void setContainswater(boolean containsWater){
+        this.containsWater = containsWater;
+    }
+
+    public boolean getContainsWater(){
+        return containsWater;
+    }
     
+    public void setMass(double mass){
+        this.mass = mass;
+    }
+    
+    public double getMass(){
+        return mass;
+    }
     
 }

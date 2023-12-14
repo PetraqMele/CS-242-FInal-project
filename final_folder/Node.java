@@ -15,8 +15,8 @@ public class Node {
 
         public Node(Planet planetData, Node nextNode, Node previousNode){//planet node with previous and next link
             this.planetData = planetData;
-            next = nextNode;
-            previous = previousNode; 
+            next = null;
+            previous = null; 
         }
 
         public Planet getPlanet(){
