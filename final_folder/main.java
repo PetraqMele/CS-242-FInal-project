@@ -32,9 +32,8 @@ public class main {
         System.out.println("\n~~~~Quiz Yourself!~~~");
 	     int astral = (int)(Math.random() * 8); 
         Scanner responses = new Scanner(System.in); 
-        Scanner Remark2 = new Scanner(System.in); 
         String resultA = responses.nextLine();
-        Double replyB = Remark2.nextDouble(); 
+       
         
         
         switch(astral) {
@@ -48,17 +47,6 @@ public class main {
                     else {
                         System.out.println("\n -true"); 
                     }
-                
-                System.out.println("\nQuestion 2: What is the expect lifetime of the sun above or below 5 billion years");
-                System.out.println("\n Type 1 or 2: ");
-                System.out.println("\n (1) - above 5 billion years"); 
-                System.out.println("\n (2) - at a estimated 5 billion years"); 
-                if (replyB != 2) {
-                   System.out.println("\n - u wrong");
-                }
-                else {
-                    System.out.println("\n - correct"); 
-                }
             break; 
             
              case 1:
@@ -71,17 +59,6 @@ public class main {
                     else {
                         System.out.println("\n - true"); 
                     }
-                
-                System.out.println("\nQuestion 2: Is the brightness of Mercury 11 times brighter than Earth");
-                System.out.println("\n Type 1 or 2: ");
-                System.out.println("\n (1) - it is 11 times brighter than Earth"); 
-                System.out.println("\n (2) - it is 8 times brighter than Earth"); 
-                if (replyB != 1) {
-                   System.out.println("\n - u wrong");
-                }
-                else {
-                    System.out.println("\n - correct"); 
-                }
                  break; 
             
              case 2:
