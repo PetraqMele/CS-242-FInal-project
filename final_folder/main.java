@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class main {
     
-    
+    boolean exit = false; 
 
     public static void initialMenu() {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -30,14 +30,17 @@ public class main {
 
     public static void printSpaceQuizOptions(){
         System.out.println("\n~~~~Quiz Yourself!~~~");
-	     int astral = (int)(Math.random() * 8); 
+	     int astral = (int)(Math.random() * 10); 
         Scanner responses = new Scanner(System.in); 
         String resultA = responses.nextLine();
        
         
         
         switch(astral) {
-            case 0:
+           case 0:
+	   exit = true;
+	break; 
+		case 1:
                 System.out.println("Question 1: Is the suns gravity greater than Jupiter");
                 System.out.println("\n True or false: ");
                 System.out.println("\n (a) - true"); 
@@ -49,7 +52,7 @@ public class main {
                     }
             break; 
             
-             case 1:
+             case 2:
             System.out.println("Question 2: Is Mercury the hottest planet in our Solar System");
                 System.out.println("\n True or false: ");
                 System.out.println("\n (a) - false"); 
@@ -61,7 +64,7 @@ public class main {
                     }
                  break; 
             
-             case 2:
+             case 3:
             System.out.println("Question 3: Is Venus the hottest planet in the Solar System ");
                 System.out.println("\n True or false: ");
                 System.out.println("\n (a) - true"); 
@@ -72,7 +75,7 @@ public class main {
                         System.out.println("\n - true"); 
                  break; 
             
-             case 3:
+             case 4:
             System.out.println("Question 4: Does the Moon affect the Earth's tide");
                 System.out.println("\n True or false: ");
                 System.out.println("\n (a) - false"); 
@@ -84,7 +87,7 @@ public class main {
                     }
                  break; 
             
-             case 4:
+             case 5:
             System.out.println("Question 5: How many sattelites does Mars have ");
                 System.out.println("\n True or false: ");
                 System.out.println("\n (a) - 3"); 
@@ -96,22 +99,64 @@ public class main {
                     }
                  break; 
             
-             case 5:
-            
-                 break; 
-            
              case 6:
-            
+            System.out.println("Question 5: How many sattelites does Mars have ");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - 3"); 
+                System.out.println("\n (b) - 8"); 
+                if (resultA == "b") {
+                    System.out.println("\n - true it is 8 stattelites");}
+                    else {
+                        System.out.println("\n - incorrect"); 
+                    }
                  break; 
             
              case 7:
-            
+            System.out.println("Question 6: Since Jupiter 10 hours a earth day but is a year on Jupiter 12 years Earth years?");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - Yes 1 year on Jupiter is 12 Earth years"); 
+                System.out.println("\n (b) - No 1 year on Jupiter is actually 16 Earth years"); 
+                if (resultA == "a") {
+                    System.out.println("\n - correct");}
+                    else {
+                        System.out.println("\n - incorrect"); 
+                    }
                  break; 
             
              case 8:
-            
+            System.out.println("Question 7: Does Saturn have a surface 'not including its core'");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - true"); 
+                System.out.println("\n (b) - false"); 
+                if (resultA == "a") {
+                    System.out.println("\n - correct");}
+                    else {
+                        System.out.println("\n - incorrect"); 
+                    }
                  break; 
-             
+            
+             case 9:
+            System.out.println("Question 8: Is Oberon the furthest moon from Uranus");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - false"); 
+                System.out.println("\n (b) - true"); 
+                if (resultA == "b") {
+                    System.out.println("\n - correct Oberon is the furthest moon from Uranus");}
+                    else {
+                        System.out.println("\n - incorrect"); 
+                    }
+                 break; 
+              case 10:
+            System.out.println("Question 9: Can Neptune support human life");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - true, Neptune can support human life"); 
+                System.out.println("\n (b) - false, it can not support human life"); 
+                if (resultA == "b") {
+                    System.out.println("\n - correct, Neptune can not support human life ");}
+                    else {
+                        System.out.println("\n - incorrect, Neptune can not support human life"); 
+                    }
+                 break;
             defualt: 
             System.out.println("try again"); 
         }
