@@ -54,7 +54,7 @@ public class main {
                 System.out.println("\n True or false: ");
                 System.out.println("\n (a) - false"); 
                 System.out.println("\n (b) - true"); 
-                if (resultA != "a") {
+                if (resultA == "a") {
                     System.out.println("\n - false");}
                     else {
                         System.out.println("\n - true"); 
