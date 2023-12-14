@@ -327,9 +327,12 @@ public class main {
                                 System.out.println("Thank you for your contribution!");
                                 Planet planet = new Planet(tempRadius, tempMass, tempDistanceFromSun, tempName, tempColor, temporaryTemp, tempContainsWater);
                                 Node temp = new Node(planet);
-                                SortedList.append(temp);
+                                solarSystem.append(temp);
                             }
                         }
+                    }
+                    else if (userChoice == 2){
+                        
                     }
                 }
 
