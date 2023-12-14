@@ -30,8 +30,91 @@ public class main {
 
     public static void printSpaceQuizOptions(){
         System.out.println("\n~~~~Quiz Yourself!~~~");
-        System.out.println("[1]5 Question quiz");
-        System.out.println("[2] 10 Question quiz");
+	     int astral = (int)(Math.random() * 8); 
+        Scanner responses = new Scanner(System.in); 
+        Scanner Remark2 = new Scanner(System.in); 
+        String resultA = responses.nextLine();
+        Double replyB = Remark2.nextDouble(); 
+        
+        
+        switch(astral) {
+            case 0:
+                System.out.println("Question 1: Is the suns gravity greater than Jupiter");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - true"); 
+                System.out.println("\n (b) - false"); 
+                if (resultA != "a") {
+                    System.out.println("\n -false");}
+                    else {
+                        System.out.println("\n -true"); 
+                    }
+                
+                System.out.println("\nQuestion 2: What is the expect lifetime of the sun above or below 5 billion years");
+                System.out.println("\n Type 1 or 2: ");
+                System.out.println("\n (1) - above 5 billion years"); 
+                System.out.println("\n (2) - at a estimated 5 billion years"); 
+                if (replyB != 2) {
+                   System.out.println("\n - u wrong");
+                }
+                else {
+                    System.out.println("\n - correct"); 
+                }
+            break; 
+            
+             case 1:
+            System.out.println("Question 1: Is Mercury the hottest planet in our Solar System");
+                System.out.println("\n True or false: ");
+                System.out.println("\n (a) - false"); 
+                System.out.println("\n (b) - true"); 
+                if (resultA != "a") {
+                    System.out.println("\n - false");}
+                    else {
+                        System.out.println("\n - true"); 
+                    }
+                
+                System.out.println("\nQuestion 2: Is the brightness of Mercury 11 times brighter than Earth");
+                System.out.println("\n Type 1 or 2: ");
+                System.out.println("\n (1) - it is 11 times brighter than Earth"); 
+                System.out.println("\n (2) - it is 8 times brighter than Earth"); 
+                if (replyB != 1) {
+                   System.out.println("\n - u wrong");
+                }
+                else {
+                    System.out.println("\n - correct"); 
+                }
+                 break; 
+            
+             case 2:
+            
+                 break; 
+            
+             case 3:
+            
+                 break; 
+            
+             case 4:
+            
+                 break; 
+            
+             case 5:
+            
+                 break; 
+            
+             case 6:
+            
+                 break; 
+            
+             case 7:
+            
+                 break; 
+            
+             case 8:
+            
+                 break; 
+             
+            defualt: 
+            System.out.println("try again"); 
+        }
     }
 
 
