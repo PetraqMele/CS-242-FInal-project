@@ -286,53 +286,53 @@ public class main {
         int userChoice = scan.nextInt();
 
         while (userChoice != 4){
-            
-            if (userChoice == 1){
-                printSpaceOptionMenu();
-                int secondUserChoice = scan.nextInt();
-                while (secondUserChoice != 5){
-                    if (secondUserChoice == 1){
-                        Node temp = solarSystem.head;
-                        solarSystem.printPlanetData(temp);
-                        System.out.println("p = Previous | n = Next |  e =Exit");
-                        String thirdChoice = scan.nextLine();
-                        while (thirdChoice != "e"){
-                            if (thirdChoice == "n" && temp.getNext() != null){
-                                temp = temp.getNext();
+                    
+                    if (userChoice == 1){
+                        printSpaceOptionMenu();
+                        int secondUserChoice = scan.nextInt();
+                        while (secondUserChoice != 5){
+                            if (secondUserChoice == 1){
+                                Node temp = solarSystem.head;
                                 solarSystem.printPlanetData(temp);
+                                System.out.println("p = Previous | n = Next |  e =Exit");
+                                String thirdChoice = scan.nextLine();
+                                while (thirdChoice != "e"){
+                                    if (thirdChoice == "n" && temp.getNext() != null){
+                                        temp = temp.getNext();
+                                        solarSystem.printPlanetData(temp);
+                                    }
+
+                                    else if(thirdChoice == "p" && temp.getPrevious() != null){
+                                        temp = temp.getPrevious();
+                                        solarSystem.printPlanetData(temp);
+                                    }
+                                }
                             }
 
-                            else if(thirdChoice == "p" && temp.getPrevious() != null){
-                                temp = temp.getPrevious();
-                                solarSystem.printPlanetData(temp);
+                            else if (secondUserChoice == 2){
+                                System.out.println("What is the name of said planet?");
+                                String tempName = scan.nextLine();
+                                System.out.println("What is the planet Color? ");
+                                String tempColor = scan.nextLine();
+                                System.out.println("Mean temperature in fahrenheit: ");
+                                double temporaryTemp = scan.nextDouble();
+                                System.out.println("What is it's mass in 10^24: ");
+                                double tempMass = scan.nextDouble();
+                                System.out.println("What is the planet radius?");
+                                double tempRadius = scan.nextDouble();
+                                System.out.println("Does it contain water?");
+                                boolean tempContainsWater = scan.nextBoolean();
+                                System.out.println("How far is the planet from the sun?");
+                                long tempDistanceFromSun = scan.nextLong();
+                                System.out.println("Thank you for your contribution!");
+                                Planet planet = new Planet(tempRadius, tempMass, tempDistanceFromSun, tempName, tempColor, temporaryTemp, tempContainsWater);
+                                Node temp = new Node(planet);
+                                SortedList.append(temp);
                             }
                         }
                     }
-
-                    else if (secondUserChoice == 2){
-                        System.out.println("What is the name of said planet?");
-                        String tempName = scan.nextLine();
-                        System.out.println("What is the planet Color? ");
-                        String tempColor = scan.nextLine();
-                        System.out.println("Mean temperature in fahrenheit: ");
-                        double temporaryTemp = scan.nextDouble();
-                        System.out.println("What is it's mass in 10^24: ");
-                        double tempMass = scan.nextDouble();
-                        System.out.println("What is the planet radius?");
-                        double tempRadius = scan.nextDouble();
-                        System.out.println("Does it contain water?");
-                        boolean tempContainsWater = scan.nextBoolean();
-                        System.out.println("How far is the planet from the sun?");
-                        long tempDistanceFromSun = scan.nextLong();
-                        System.out.println("Thank you for your contributions!");
-                        Node
-
-                    }
                 }
+
             }
-        }
-	
-        
-    }
        
 }
