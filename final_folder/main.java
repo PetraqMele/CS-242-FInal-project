@@ -16,18 +16,16 @@ public class main {
         System.out.println("\n~~~~Choose options below~~~");
         System.out.println("[1]~~~~Planets~~~~~~~~~~~~~~~");
         System.out.println("[2]~~~~~Space quiz~~~~~~~~~~~");
-        System.out.println("[3]~~~~~rocket ship game~~~~~");
-        System.out.println("[4]~~~~~Exit~~~~~~~~~~~~~~~~~");
+        System.out.println("[3]~~~~~Exit~~~~~~~~~~~~~~~~~");
     
     }
 
     public static void printSpaceOptionMenu(){
         System.out.println("\n~~~~Welcome to the data base~~~");
-        System.out.println("[1]Planets");
+        System.out.println("[1]Manage Planets");
         System.out.println("[2]Add Planets");
         System.out.println("[3]Remove Planets");
-        System.out.println("[4]Search for Planet");
-        System.out.println("[5]Back");
+        System.out.println("[4]Back");
     }
 
         public static void printSpaceQuizOptions(){
@@ -166,9 +164,7 @@ public class main {
         }
 
 
-    public static void printRocketShipGameOptions(){
-        System.out.print("Welcome to the Rocket Ship!");
-    }
+    
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -255,8 +251,7 @@ public class main {
         Neptune.setMass(102);
         Neptune.setTemperature(-330);
 
-        
-        
+
         Node n1 = new Node(Sun);
         Node n2 = new Node(Mercury);
         Node n3 = new Node(Venus);
@@ -280,62 +275,58 @@ public class main {
         
         
         solarSystem.printList();
-        initialMenu();
-        printMenu();
+        
+        int topLevelChoice;
 
-        int userChoice = scan.nextInt();
+        do {
+            
+            initialMenu();
+            printMenu();
 
-        while (userChoice != 4){
+            System.out.print("Enter your choice: ");
+
+            topLevelChoice = scan.nextInt();
+
+            switch (topLevelChoice) {
+                case 1:
                     
-                    if (userChoice == 1){
-                        printSpaceOptionMenu();
-                        int secondUserChoice = scan.nextInt();
-                        while (secondUserChoice != 5){
-                            if (secondUserChoice == 1){
-                                Node temp = solarSystem.head;
-                                solarSystem.printPlanetData(temp);
-                                System.out.println("p = Previous | n = Next |  e =Exit");
-                                String thirdChoice = scan.nextLine();
-                                while (thirdChoice != "e"){
-                                    if (thirdChoice == "n" && temp.getNext() != null){
-                                        temp = temp.getNext();
-                                        solarSystem.printPlanetData(temp);
-                                    }
+                    printSpaceOptionMenu();
+                    int secondlevelChoice;
+                    do{
+                        secondlevelChoice = scan.nextInt();
+                        switch (secondlevelChoice) {
+                            case 1:
 
-                                    else if(thirdChoice == "p" && temp.getPrevious() != null){
-                                        temp = temp.getPrevious();
-                                        solarSystem.printPlanetData(temp);
-                                    }
-                                }
-                            }
-
-                            else if (secondUserChoice == 2){
-                                System.out.println("What is the name of said planet?");
-                                String tempName = scan.nextLine();
-                                System.out.println("What is the planet Color? ");
-                                String tempColor = scan.nextLine();
-                                System.out.println("Mean temperature in fahrenheit: ");
-                                double temporaryTemp = scan.nextDouble();
-                                System.out.println("What is it's mass in 10^24: ");
-                                double tempMass = scan.nextDouble();
-                                System.out.println("What is the planet radius?");
-                                double tempRadius = scan.nextDouble();
-                                System.out.println("Does it contain water?");
-                                boolean tempContainsWater = scan.nextBoolean();
-                                System.out.println("How far is the planet from the sun?");
-                                long tempDistanceFromSun = scan.nextLong();
-                                System.out.println("Thank you for your contribution!");
-                                Planet planet = new Planet(tempRadius, tempMass, tempDistanceFromSun, tempName, tempColor, temporaryTemp, tempContainsWater);
-                                Node temp = new Node(planet);
-                                solarSystem.append(temp);
-                            }
+                                solarSystem.printPlanetData(n1);
+                                System.out.println("previous planet[p] | next planet[n] | exit[e]");
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                System.out.println("Invalid choice. PLease try again.");
                         }
-                    }
-                    else if (userChoice == 2){
-                        
-                    }
-                }
+                    }while(secondlevelChoice != 3);
+                    break;
 
+                case 2:
+                    solarSystem.printList();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    System.out.println("Exiting the program. Goodbye!");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
             }
+        } while (topLevelChoice != 4);
+
+        scan.close();
+    }
+
+
+
+    }
        
-}
+
