@@ -94,4 +94,7 @@ public class Planet {
         return mass;
     }
     
+    public String getName(){
+        return name;
+    }
 }

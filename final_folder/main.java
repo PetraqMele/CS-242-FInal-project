@@ -1,4 +1,5 @@
 package final_folder;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class main {
@@ -168,16 +169,8 @@ public class main {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-
         //Creating all the planets
-        Planet Sun = new Planet();
-        Sun.setDistanceFromSun(0);
-        Sun.setRadius(700000);
-        Sun.setName("Sun");
-        Sun.setColor("White");
-        Sun.setContainswater(false);
-        Sun.setMass(1988500);
-        Sun.setTemperature(10000);
+        Planet Sun = new Planet(700000,1988500,0,"Sun","White",10000,false);
 
         Planet Mercury = new Planet();
         Mercury.setDistanceFromSun(58000000);
@@ -298,13 +291,13 @@ public class main {
                             case 1:
 
                                 solarSystem.printPlanetData(n1);
-                                System.out.println("previous planet[p] | next planet[n] | exit[e]");
+
                                 break;
                             case 2:
 
                                 System.out.println("Before we add this planet there is some information we need: ");
                                 System.out.println("What is the planets approximate distance from the sun in Kilometers: ");
-                                long tempDistFromSun = scan.nextInt();
+                                long tempDistFromSun = scan.nextLong();
                                 System.out.println("What is the planets radius?");
                                 int tempRadius = scan.nextInt();
                                 System.out.println("What is the name of this planet?");
@@ -318,11 +311,12 @@ public class main {
                                 System.out.println("What is the average temperature of this planet?");
                                 int tempTemperature = scan.nextInt();
 
-                                Planet tempPlanet = new Planet(tempRadius, tempMass, tempMass, tempName, tempColor, tempTemperature, tempContainsWater);
+                                Planet tempPlanet = new Planet(tempRadius, tempMass, tempDistFromSun, tempName, tempColor, tempTemperature, tempContainsWater);
                                 Node tempNode = new Node(tempPlanet);
                                 solarSystem.append(tempNode);
                                 solarSystem.insertionSortDoublyLinked();
                                 solarSystem.printList();
+                                printSpaceOptionMenu();
                                 break;
                             case 3:
 
@@ -330,33 +324,47 @@ public class main {
                                 solarSystem.printList();
                                 String planetToRemove = scan.next();
                                 
+                                solarSystem.remove(findPlanet(n1, planetToRemove));
+                                solarSystem.printList();
+                                printSpaceOptionMenu();
+                                break;
                             case 4:
                                 break;
                             default:
                                 System.out.println("Invalid choice. PLease try again.");
                         }
-                    }while(secondlevelChoice != 3);
+                    }while(secondlevelChoice != 4);
                     break;
 
                 case 2:
-                    solarSystem.printList();
+                    
                     break;
+                
                 case 3:
-                    break;
-                case 4:
                     System.out.println("Exiting the program. Goodbye!");
                     break;
 
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-        } while (topLevelChoice != 4);
+        } while (topLevelChoice != 3);
 
         scan.close();
     }
-
-
-
+    private static Node findPlanet(Node current, String planetToRemove) {
+        if (current == null){
+            return null;
+         }
+         if (current.getPlanet().getName().equals(planetToRemove)){
+            return current;
+         }
+            return findPlanet(current.next, planetToRemove);
+      }
     }
+    
+
+
+
+    
        
 

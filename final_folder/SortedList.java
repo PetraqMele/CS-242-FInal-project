@@ -93,6 +93,15 @@ public class SortedList {
          tail = predecessor;
    }
 
+   public static Planet findPlanet(Node current, String tempString){
+      if (current == null){
+         return null;
+      }
+      if (current.getPlanet().getName().equals(tempString)){
+         return current.getPlanet();
+      }
+         return findPlanet(current.next, tempString);
+   }
    
 
    public void printList() {
@@ -104,13 +113,14 @@ public class SortedList {
       System.out.println();
    }
 
+
    public void printPlanetData(Node currentPlanet){
       System.out.println("Current Planet: " + currentPlanet.getPlanet().toString());
-      System.out.println("Radius: " + currentPlanet.getPlanet().getRadius());
+      System.out.println("Radius: " + currentPlanet.getPlanet().getRadius() + " Kilometers");
       System.out.println("Mass: " + currentPlanet.getPlanet().getMass() + " x 10^24");
-      System.out.println("Distance from the Sun: " + currentPlanet.getPlanet().getDistanceFromSun());
+      System.out.println("Distance from the Sun: " + currentPlanet.getPlanet().getDistanceFromSun() + " Kilometers");
       System.out.println("Color of the Planet: " + currentPlanet.getPlanet().getColor());
-      System.out.println("Temperature of the Planet: " + currentPlanet.getPlanet().getTemperature());
+      System.out.println("Temperature of the Planet: " + currentPlanet.getPlanet().getTemperature() + " Degrees Celcius");
       System.out.println("Does this planet contain water? " + currentPlanet.getPlanet().getContainsWater());
   }
 
