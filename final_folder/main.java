@@ -27,7 +27,7 @@ public class main {
         System.out.println("[3]Remove Planets");
         System.out.println("[4]Back");
     }
-
+/* 
         public static void printSpaceQuizOptions(){
             System.out.println("\n~~~~Quiz Yourself!~~~");
              int astral = (int)(Math.random() * 10); 
@@ -161,7 +161,7 @@ public class main {
                 default: 
                 System.out.println("try again"); 
             }
-        }
+        }*/
 
 
     
@@ -300,7 +300,37 @@ public class main {
                                 solarSystem.printPlanetData(n1);
                                 System.out.println("previous planet[p] | next planet[n] | exit[e]");
                                 break;
+                            case 2:
+
+                                System.out.println("Before we add this planet there is some information we need: ");
+                                System.out.println("What is the planets approximate distance from the sun in Kilometers: ");
+                                long tempDistFromSun = scan.nextInt();
+                                System.out.println("What is the planets radius?");
+                                int tempRadius = scan.nextInt();
+                                System.out.println("What is the name of this planet?");
+                                String tempName = scan.next();
+                                System.out.println("What is the color(s) of this planet?");
+                                String tempColor = scan.next();
+                                System.out.println("Does this planet contain water? (true or false)");
+                                boolean tempContainsWater = scan.nextBoolean();
+                                System.out.println("What is the mass of this planet? (This is in 10^24)");
+                                int tempMass = scan.nextInt();
+                                System.out.println("What is the average temperature of this planet?");
+                                int tempTemperature = scan.nextInt();
+
+                                Planet tempPlanet = new Planet(tempRadius, tempMass, tempMass, tempName, tempColor, tempTemperature, tempContainsWater);
+                                Node tempNode = new Node(tempPlanet);
+                                solarSystem.append(tempNode);
+                                solarSystem.insertionSortDoublyLinked();
+                                solarSystem.printList();
+                                break;
                             case 3:
+
+                                System.out.println("Which planet would you like to remove?");
+                                solarSystem.printList();
+                                String planetToRemove = scan.next();
+                                
+                            case 4:
                                 break;
                             default:
                                 System.out.println("Invalid choice. PLease try again.");

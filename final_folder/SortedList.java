@@ -21,7 +21,77 @@ public class SortedList {
       }
    }
 
+   public void insertionSortDoublyLinked() {
+      Node currentNode = head.next;
+      while (currentNode != null) {
+         Node nextNode = currentNode.next;
+         Node searchNode = currentNode.previous;
+            
+         while (searchNode != null && searchNode.getPlanet().getDistanceFromSun() > currentNode.getPlanet().getDistanceFromSun())
+            searchNode = searchNode.previous;
+         
+         // Remove and re-insert currentNode
+         remove(currentNode);
+         if (searchNode == null) {
+            currentNode.previous = null;
+            prepend(currentNode);
+         }
+         else {
+            insertAfter(searchNode, currentNode);
+         }
    
+         // Advance to next node
+         currentNode = nextNode;
+      }
+   }
+
+   public void prepend(Node newNode) {
+      if (head == null) {
+         head = newNode;
+         tail = newNode;
+      }
+      else {
+         newNode.next = head;
+         head.previous = newNode;
+         head = newNode;
+      }
+   }
+
+   public void insertAfter(Node currentNode, Node newNode) {
+      if (head == null) {
+         head = newNode;
+         tail = newNode;
+      }
+      else if (currentNode == tail) {
+         tail.next = newNode;
+         newNode.previous = tail;
+         tail = newNode;
+      }
+      else {
+         Node successor = currentNode.next;
+         newNode.next = successor;
+         newNode.previous = currentNode;
+         currentNode.next = newNode;
+         successor.previous = newNode;
+      }
+   }
+   
+   public void remove(Node currentNode) {
+      Node successor = currentNode.next;
+      Node predecessor = currentNode.previous;
+         
+      if (successor != null)
+         successor.previous = predecessor;
+            
+      if (predecessor != null)
+         predecessor.next = successor;
+            
+      if (currentNode == head)
+         head = successor;
+            
+      if (currentNode == tail)
+         tail = predecessor;
+   }
 
    
 
