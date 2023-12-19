@@ -42,13 +42,5 @@ public class Node {
         public void setPrevious(Node planet){
             previous = planet;
         }
-        public static Planet findPlanet(Node current, String tempString){
-            if (current == null){
-               return null;
-            }
-            if (current.getPlanet().getName().equals(tempString)){
-               return current.getPlanet();
-            }
-               return findPlanet(current.next, tempString);
-         }
+        
 }

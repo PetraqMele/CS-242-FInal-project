@@ -93,21 +93,26 @@ public class SortedList {
          tail = predecessor;
    }
 
-   public static Planet findPlanet(Node current, String tempString){
-      if (current == null){
-         return null;
-      }
-      if (current.getPlanet().getName().equals(tempString)){
-         return current.getPlanet();
-      }
-         return findPlanet(current.next, tempString);
-   }
+   
    
 
    public void printList() {
       Node node = head;
       while (node != null) {
          System.out.print(node.getPlanet() + " ");
+         node = node.next;
+      }
+      System.out.println();
+   }
+
+   public void printDetailedList(){
+      Node node = head;
+      int position = 1;
+      while (node != null) {
+         System.out.print(position + ". ");
+         printPlanetData(node);
+         System.out.println();
+         position++;
          node = node.next;
       }
       System.out.println();

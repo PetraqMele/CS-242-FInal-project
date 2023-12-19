@@ -28,15 +28,19 @@ public class main {
         System.out.println("[3]Remove Planets");
         System.out.println("[4]Back");
     }
-/* 
+ 
         public static void printSpaceQuizOptions(){
             System.out.println("\n~~~~Quiz Yourself!~~~");
-             int astral = (int)(Math.random() * 10); 
+            
             Scanner responses = new Scanner(System.in); 
-            String resultA = responses.nextLine();
-           
+            int numOfQuestions = 0;
+            String resultA;
+            int finalScore = 0;
             
-            
+            while (numOfQuestions < 5) {
+                
+            int astral = (int)(Math.random() * 10);        
+
             switch(astral) {
                case 0:
                 exit = true;
@@ -46,115 +50,146 @@ public class main {
                     System.out.println("\n True or false: ");
                     System.out.println("\n (a) - true"); 
                     System.out.println("\n (b) - false"); 
+
+                    resultA = responses.nextLine();
                     if (resultA == "a") {
                         System.out.println("\n -false");}
                         else {
                             System.out.println("\n -true"); 
+                            numOfQuestions++;
+                            finalScore++;
                         }
                 break; 
                 
-                 case 2:
+            case 2:
                 System.out.println("Question 2: Is Mercury the hottest planet in our Solar System");
                     System.out.println("\n True or false: ");
                     System.out.println("\n (a) - false"); 
                     System.out.println("\n (b) - true"); 
-                    if (resultA == "a") {
-                        System.out.println("\n - false");}
-                        else {
-                            System.out.println("\n - true"); 
-                        }
-                     break; 
-                
-                 case 3:
-                System.out.println("Question 3: Is Venus the hottest planet in the Solar System ");
-                    System.out.println("\n True or false: ");
-                    System.out.println("\n (a) - true"); 
-                    System.out.println("\n (b) - false"); 
+                    resultA = responses.nextLine();
                     if (resultA == "a") {
                         System.out.println("\n - false");}
                         else {
                             System.out.println("\n - true");
+                            numOfQuestions++;
+                            finalScore++; 
+                        }
+                     break; 
+                
+            case 3:
+                System.out.println("Question 3: Is Venus the hottest planet in the Solar System ");
+                    System.out.println("\n True or false: ");
+                    System.out.println("\n (a) - true"); 
+                    System.out.println("\n (b) - false"); 
+                    resultA = responses.nextLine();
+                    if (resultA == "a") {
+                        System.out.println("\n - false");}
+                        else {
+                            System.out.println("\n - true");
+                            numOfQuestions++;
+                            finalScore++;
                         } 
                      break; 
                 
-                 case 4:
+            case 4:
                 System.out.println("Question 4: Does the Moon affect the Earth's tide");
                     System.out.println("\n True or false: ");
                     System.out.println("\n (a) - false"); 
                     System.out.println("\n (b) - true"); 
+                    resultA = responses.nextLine();
                     if (resultA == "a") {
+                        numOfQuestions++;
+                        finalScore++;
                         System.out.println("\n - true");}
                         else {
                             System.out.println("\n - false"); 
                         }
                      break; 
                 
-                 case 5:
+            case 5:
                 System.out.println("Question 5: How many sattelites does Mars have ");
                     System.out.println("\n True or false: ");
                     System.out.println("\n (a) - 3"); 
                     System.out.println("\n (b) - 8"); 
+                    resultA = responses.nextLine();
                     if (resultA == "b") {
-                        System.out.println("\n - true");}
+                        System.out.println("\n - true");
+                        numOfQuestions++;
+                            finalScore++;}
                         else {
                             System.out.println("\n - false"); 
                         }
                      break; 
                 
-                 case 6:
+            case 6:
                 System.out.println("Question 5: How many sattelites does Mars have ");
                     System.out.println("\n True or false: ");
                     System.out.println("\n (a) - 3"); 
                     System.out.println("\n (b) - 8"); 
+                    resultA = responses.nextLine();
                     if (resultA == "b") {
-                        System.out.println("\n - true it is 8 stattelites");}
+                        System.out.println("\n - true it is 8 stattelites");
+                    numOfQuestions++;
+                            finalScore++;}
                         else {
                             System.out.println("\n - incorrect"); 
                         }
                      break; 
                 
-                 case 7:
+            case 7:
                 System.out.println("Question 6: Since Jupiter 10 hours a earth day but is a year on Jupiter 12 years Earth years?");
                     System.out.println("\n True or false: ");
                     System.out.println("\n (a) - Yes 1 year on Jupiter is 12 Earth years"); 
                     System.out.println("\n (b) - No 1 year on Jupiter is actually 16 Earth years"); 
+                    resultA = responses.nextLine();
                     if (resultA == "a") {
-                        System.out.println("\n - correct");}
+                        System.out.println("\n - correct");
+                    numOfQuestions++;
+                            finalScore++;}
                         else {
                             System.out.println("\n - incorrect"); 
                         }
                      break; 
                 
-                 case 8:
+            case 8:
                 System.out.println("Question 7: Does Saturn have a surface 'not including its core'");
                     System.out.println("\n True or false: ");
                     System.out.println("\n (a) - true"); 
                     System.out.println("\n (b) - false"); 
+                    resultA = responses.nextLine();
                     if (resultA == "a") {
-                        System.out.println("\n - correct");}
+                        System.out.println("\n - correct");
+                    numOfQuestions++;
+                            finalScore++;}
                         else {
                             System.out.println("\n - incorrect"); 
                         }
                      break; 
                 
-                 case 9:
+            case 9:
                 System.out.println("Question 8: Is Oberon the furthest moon from Uranus");
                     System.out.println("\n True or false: ");
                     System.out.println("\n (a) - false"); 
                     System.out.println("\n (b) - true"); 
+                    resultA = responses.nextLine();
                     if (resultA == "b") {
-                        System.out.println("\n - correct Oberon is the furthest moon from Uranus");}
+                        System.out.println("\n - correct Oberon is the furthest moon from Uranus");
+                    numOfQuestions++;
+                            finalScore++;}
                         else {
                             System.out.println("\n - incorrect"); 
                         }
                      break; 
-                  case 10:
+            case 10:
                 System.out.println("Question 9: Can Neptune support human life");
                     System.out.println("\n True or false: ");
                     System.out.println("\n (a) - true, Neptune can support human life"); 
                     System.out.println("\n (b) - false, it can not support human life"); 
+                    resultA = responses.nextLine();
                     if (resultA == "b") {
-                        System.out.println("\n - correct, Neptune can not support human life ");}
+                        System.out.println("\n - correct, Neptune can not support human life ");
+                    numOfQuestions++;
+                            finalScore++;}
                         else {
                             System.out.println("\n - incorrect, Neptune can not support human life"); 
                         }
@@ -162,7 +197,9 @@ public class main {
                 default: 
                 System.out.println("try again"); 
             }
-        }*/
+        }
+            System.out.println("Final Score: " + finalScore + "/" + numOfQuestions);
+        }
 
 
     
@@ -171,24 +208,11 @@ public class main {
 		Scanner scan = new Scanner(System.in);
         //Creating all the planets
         Planet Sun = new Planet(700000,1988500,0,"Sun","White",10000,false);
-
-        Planet Mercury = new Planet();
-        Mercury.setDistanceFromSun(58000000);
-        Mercury.setRadius(2440);
-        Mercury.setName("Mercury");
-        Mercury.setColor("Grey");
-        Mercury.setContainswater(false);
-        Mercury.setTemperature(333);
+        Sun.setMass(1988501);
+        Planet Mercury = new Planet(2440, 0.33, 58000000, "Mercury", "Grey", 333, false);
         Mercury.setMass(0.33);
-
-        Planet Venus = new Planet();
-        Venus.setDistanceFromSun(108000000);
-        Venus.setRadius(6051);
-        Venus.setName("venus");
-        Venus.setColor("Red");
+        Planet Venus = new Planet(6051, 4.87, 108000000, "Venus", "Red", 867, false);
         Venus.setMass(4.87);
-        Venus.setTemperature(867);
-        Venus.setContainswater(false);
 
         Planet Earth = new Planet();
         Earth.setDistanceFromSun(150000000);
@@ -289,9 +313,9 @@ public class main {
                         secondlevelChoice = scan.nextInt();
                         switch (secondlevelChoice) {
                             case 1:
-
-                                solarSystem.printPlanetData(n1);
-
+                            
+                                solarSystem.printDetailedList();
+                                printSpaceOptionMenu();
                                 break;
                             case 2:
 
@@ -335,15 +359,18 @@ public class main {
                         }
                     }while(secondlevelChoice != 4);
                     break;
-
+                    //end of main menu case 1
+                    //start of case 2
                 case 2:
-                    
+                    printSpaceQuizOptions();
                     break;
-                
+                    //end of main menu case 2
+                    //start of case 3
                 case 3:
                     System.out.println("Exiting the program. Goodbye!");
                     break;
-
+                    //end of case 3
+                    //default
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
@@ -351,6 +378,7 @@ public class main {
 
         scan.close();
     }
+    
     private static Node findPlanet(Node current, String planetToRemove) {
         if (current == null){
             return null;
